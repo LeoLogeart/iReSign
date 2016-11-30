@@ -35,8 +35,16 @@
     NSString *codesigningResult;
     NSString *verificationResult;
     
+    NSString *entitlementsPath;
+    NSString *newBundleID;
+    NSString *outputPath;
+    NSString *certificatePath;
+    NSString *mobileprovisionPath;
+    
     NSMutableArray *frameworks;
     Boolean hasFrameworks;
+    Boolean isCommandLine;
+    Boolean asyncProcDone;
     
     IBOutlet IRTextFieldDrag *pathField;
     IBOutlet IRTextFieldDrag *provisioningPathField;
@@ -79,5 +87,6 @@
 - (void)checkZip:(NSTimer *)timer;
 - (void)disableControls;
 - (void)enableControls;
+- (void)resignApp:(NSString*)app andEntitlements:(NSString*)entitlements andBundle:(NSString*)bundleID andOutput:(NSString*)output andCert:(NSString*)cert andMobileprovision:(NSString*)mobileprovision;
 
 @end
